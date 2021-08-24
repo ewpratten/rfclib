@@ -124,3 +124,15 @@ pub async fn query_rfc(number: u32) -> Result<Rfc, reqwest::Error> {
     .json()
     .await?)
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_query_rfc_failure() {
+        tokio_test::block_on(async {
+            let rfc = query_rfc(9999999).await;
+            assert!(rfc.is_err());
+        })
+    }
+}
