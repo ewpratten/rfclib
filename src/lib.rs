@@ -1,3 +1,5 @@
+//! `rfclib` is a library for fetching information about IETF RFCs.
+
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
 
