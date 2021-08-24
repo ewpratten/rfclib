@@ -5,13 +5,12 @@
 [![Clippy](https://github.com/Ewpratten/rfclib/actions/workflows/clippy.yml/badge.svg)](https://github.com/Ewpratten/rfclib/actions/workflows/clippy.yml)
 [![Audit](https://github.com/Ewpratten/rfclib/actions/workflows/audit.yml/badge.svg)](https://github.com/Ewpratten/rfclib/actions/workflows/audit.yml)
 
+Rust library for querying IETF RFCs
 
-repo description
+## Example
 
-## Installation
-
-This crate can be installed via `cargo` with:
-
-```sh
-cargo install rfclib
+```rust
+let rfc = rfclib::query_rfc(2549).await.unwrap();
+assert_eq!(rfc.name, "rfc2549");
+assert_eq!(rfc.title, "IP over Avian Carriers with Quality of Service");
 ```
